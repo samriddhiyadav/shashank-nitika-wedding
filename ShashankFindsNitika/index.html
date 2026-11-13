@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Shashank & Nitika — The Celebration</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SVG DEFINITIONS -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <clipPath id="cuspedGate" clipPathUnits="objectBoundingBox">
+            <path d="M 0,1 L 0,0.46 Q -0.1,0.4 0.05,0.34 Q -0.05,0.26 0.16,0.23 Q 0.13,0.12 0.3,0.12 Q 0.36,0.04 0.5,0 Q 0.64,0.04 0.7,0.12 Q 0.87,0.12 0.84,0.23 Q 1.05,0.26 0.95,0.34 Q 1.1,0.4 1,0.46 L 1,1 Z" />
+        </clipPath>
+        <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3E5AB"/><stop offset=".5" stop-color="#D4AF37"/><stop offset="1" stop-color="#A47B24"/></linearGradient>
+        <symbol id="i-flourish" viewBox="0 0 320 26">
+          <g fill="none" stroke="#D4AF37" stroke-width="1.2" stroke-linecap="round">
+            <path d="M6 13H112M208 13H314"/>
+            <path d="M112 13C124 2 138 3 146 13C138 23 124 24 112 13ZM208 13C196 2 182 3 174 13C182 23 196 24 208 13Z"/>
+            <path d="M120 13C128 8 134 9 138 13"/><path d="M200 13C192 8 186 9 182 13"/>
+          </g>
+          <path d="M160 1L171 13L160 25L149 13Z" fill="url(#gGold)" stroke="#A47B24" stroke-width=".8"/>
+          <circle cx="160" cy="13" r="2.4" fill="#3D0B14"/><circle cx="14" cy="13" r="2" fill="#D4AF37"/><circle cx="306" cy="13" r="2" fill="#D4AF37"/>
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+            <path d="M12 2C8.686 2 6 4.686 6 8c0 2.228 1.228 4.146 3 5.192V22l3 2 3-2V13.192c1.772-1.046 3-2.964 3-5.192 0-3.314-2.686-6-6-6z" fill="#D4AF37" stroke="#A47B24" stroke-width="1.5"/>
+            <circle cx="12" cy="8" r="2" fill="#A47B24" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div id="fx-container"></div>
+
+    <!-- THE DOORS -->
+    <div class="gate" id="doorContainer">
+        <div class="door-half door-left"></div>
+        <div class="door-half door-right"></div>
+
+        <div class="instruction" id="instruction">Press and Hold the Seal</div>
+
+        <div class="seal-wrapper" id="sealWrapper">
+            <div class="seal-glow" id="sealGlow"></div>
+            <button id="seal-btn">
+                <img src="images/envelope/seal.png" alt="Wax Seal" class="seal-base" onerror="this.style.display='none'">
+                <img src="images/envelope/ns_logo.png" alt="NS Logo" class="seal-logo" onerror="this.style.display='none'">
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        
+        <header class="main-header">
+            <a href="#" class="logo">
+                <img src="images/envelope/ns_logo.png" alt="Logo" class="header-logo-img">
+            </a>
+            <div class="nav-actions">
+                <a href="celebrate.html" class="nav-link celebrate-link">Celebrate</a>
+                <a href="#rsvp" class="nav-link">RSVP</a>
+            </div>
+        </header>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <p class="ganesh">|| Shri Ganeshaya Namah ||</p>
+                <p class="kicker">We Invite You To Celebrate</p>
+                <h1 class="names">
+                    Shashank
+                    <span class="amp">&</span>
+                    Nitika
+                </h1>
+                <p class="hashtag">#ShashankFindsNitika</p>
+                <div class="date-box">
+                    <div class="line"></div>
+                    <span>20 – 23 NOVEMBER 2026</span>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTDOWN -->
+        <section class="countdown" id="countdown" aria-labelledby="cdTitle">
+            <div class="wrap">
+                <div class="sec-head">
+                    <span class="eyebrow">Counting Every Moment</span>
+                    <h2 id="cdTitle">Until the Pheras</h2>
+                    <svg class="divider" aria-hidden="true" viewBox="0 0 320 26"><use href="#i-flourish" width="320" height="26"/></svg>
+                </div>
+                
+                <div id="cdWrap" role="timer" aria-live="off">
+                    <div class="cd-grid" id="cdGrid">
+                        <div class="hex-wrapper"><div class="hex-inner">
+                            <span class="cd-num" id="cdD">00</span><span class="cd-lab">Days</span>
+                        </div></div>
+                        <div class="hex-wrapper"><div class="hex-inner">
+                            <span class="cd-num" id="cdH">00</span><span class="cd-lab">Hours</span>
+                        </div></div>
+                        <div class="hex-wrapper"><div class="hex-inner">
+                            <span class="cd-num" id="cdM">00</span><span class="cd-lab">Mins</span>
+                        </div></div>
+                        <div class="hex-wrapper"><div class="hex-inner">
+                            <span class="cd-num" id="cdS">00</span><span class="cd-lab">Secs</span>
+                        </div></div>
+                    </div>
+                    <p class="cd-done" id="cdDone" hidden>Just Married!</p>
+                    <p class="cd-target" id="cdTarget"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENTS SECTION -->
+        <section class="events-sec" id="celebrations">
+            <div class="sec-title">
+                <p>Three Days of Joy</p>
+                <h2>The Celebrations</h2>
+                <p class="sec-subtitle">Join us for music, haldi, and the sacred vows.</p>
+            </div>
+
+            <div class="events-track" id="eventsTrack">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="date-circle"><span>20</span> Nov</div>
+                    <div class="gate-frame">
+                        <div class="gate-inner">
+                            <img src="images/main/silmayan.png" alt="Silmayan">
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>Silmayan</h3>
+                        <div class="time">Evening</div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="date-circle"><span>21</span> Nov</div>
+                    <div class="gate-frame">
+                        <div class="gate-inner">
+                            <img src="images/main/wedding.png" alt="Wedding">
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>Wedding</h3>
+                        <div class="time">7:00 PM</div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="date-circle"><span>22</span> Nov</div>
+                    <div class="gate-frame">
+                        <div class="gate-inner">
+                            <img src="images/main/vadhu-aagman.png" alt="Vadhu Aagman">
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>Vadhu Aagman</h3>
+                        <div class="time">Morning</div>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="event-card">
+                    <div class="date-circle"><span>23</span> Nov</div>
+                    <div class="gate-frame">
+                        <div class="gate-inner">
+                            <img src="images/main/reception.png" alt="Reception">
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>Reception</h3>
+                        <div class="time">Evening</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE LOTUS JUNCTION -->
+        <div class="section-divider">
+            <img src="images/main/lotus.png" alt="Lotus" class="junction-lotus">
+        </div>
+
+        <!-- POLAROID WALL -->
+        <section class="couple-sec" id="meet-couple">
+            <div class="sec-title">
+                <p>The Beautiful Duo</p>
+                <h2>Meet the Couple</h2>
+                <svg class="divider" aria-hidden="true" viewBox="0 0 320 26"><use href="#i-flourish" width="320" height="26"/></svg>
+            </div>
+
+            <div class="polaroid-track" id="polaroidTrack">
+                <!-- Groom -->
+                <div class="polaroid">
+                    <svg class="pin" viewBox="0 0 24 24"><use href="#i-pin"></use></svg>
+                    <img src="images/people/groom.png" alt="Shashank" class="polaroid-img" onerror="this.src='https://via.placeholder.com/400x400/3D0B14/D4AF37?text=Groom'">
+                    <div class="polaroid-text">
+                        <h3>Shashank</h3>
+                        <span>The Groom</span>
+                    </div>
+                </div>
+
+                <!-- Bride -->
+                <div class="polaroid">
+                    <svg class="pin" viewBox="0 0 24 24"><use href="#i-pin"></use></svg>
+                    <img src="images/people/bride.png" alt="Nitika" class="polaroid-img" onerror="this.src='https://via.placeholder.com/400x400/3D0B14/D4AF37?text=Bride'">
+                    <div class="polaroid-text">
+                        <h3>Nitika</h3>
+                        <span>The Bride</span>
+                    </div>
+                </div>
+
+                <!-- Together -->
+                <div class="polaroid">
+                    <svg class="pin" viewBox="0 0 24 24"><use href="#i-pin"></use></svg>
+                    <img src="images/people/together.png" alt="Shashank and Nitika" class="polaroid-img" onerror="this.src='https://via.placeholder.com/400x400/3D0B14/D4AF37?text=Together'">
+                    <div class="polaroid-text">
+                        <h3>Together</h3>
+                        <span>Forever</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAMILIES & INVITERS SECTION -->
+        <section class="families-sec" id="families">
+            <div class="wrap">
+                <div class="sec-head">
+                    <span class="eyebrow">With Blessings</span>
+                    <h2>The Families</h2>
+                    <svg class="divider" aria-hidden="true" viewBox="0 0 320 26"><use href="#i-flourish" width="320" height="26"/></svg>
+                </div>
+
+                <!-- 1. THE LIGHT EDITORIAL LINEAGE -->
+                <div class="lineage-editorial">
+                    
+                    <!-- Groom -->
+                    <div class="editorial-col">
+                        <span class="editorial-kicker">The Groom</span>
+                        <h3 class="editorial-name">Chiranjeev<br>Shashank Yadav</h3>
+                        
+                        <div class="editorial-tree">
+                            <p class="tree-label">Beloved Son of</p>
+                            <p class="tree-main">Smt. Sunita Yadav &<br>Shri Santosh Kumar Yadav</p>
+                            
+                            <div class="tree-divider"></div>
+                            
+                            <p class="tree-label">Grandson of</p>
+                            <p class="tree-sub">Late Bittan Devi &<br>Late Kishori Lal Yadav</p>
+                            
+                            <p class="tree-city">Prayagraj</p>
+                        </div>
+                    </div>
+
+                    <!-- Center Ornament -->
+                    <div class="editorial-divider">
+                        <div class="divider-line"></div>
+                        <div class="divider-icon">✦</div>
+                        <div class="divider-line"></div>
+                    </div>
+
+                    <!-- Bride -->
+                    <div class="editorial-col">
+                        <span class="editorial-kicker">The Bride</span>
+                        <h3 class="editorial-name">Saubhagyakankshi<br>Nitika</h3>
+                        
+                        <div class="editorial-tree">
+                            <p class="tree-label">Cherished Daughter of</p>
+                            <p class="tree-main">Smt. Anita Yadav &<br>Late Shaikkhar Yadav</p>
+                            
+                            <div class="tree-divider"></div>
+                            
+                            <p class="tree-label">Granddaughter of</p>
+                            <p class="tree-sub">Late Kalawati &<br>Late Sita Ram Yadav</p>
+                            
+                            <p class="tree-city">Prayagraj</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 2. THE MAROON PLAQUE FOR INVITERS ONLY -->
+                <div class="royal-plaque">
+                    <div class="plaque-inner">
+                        <div class="plaque-bottom" style="margin-top: 0; padding-top: 0; border-top: none;">
+                            <p class="invite-title">Warmly Invited By</p>
+                            <p class="invite-names">Raja Ram Yadav, Pramod Kumar, Vinod Kumar, Rakesh Kumar,<br>Mahendra Kumar, Rohit, Anurag & Family</p>
+                            
+                            <p class="invite-with">With</p>
+                            
+                            <p class="invite-main">Manna Lal Yadav</p>
+                            
+                            <div class="invite-contact">
+                                <span>📞 9794261166, 9450617415</span>
+                                <span class="dot-sep">•</span>
+                                <span>📍 134/4, Kho. Bagh, Prayagraj</span>
+                            </div>
+                            
+                            <p class="invite-blessing">|| Ayushman Bhava ||</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LOCATION SECTION -->
+        <section class="location-sec" id="locations">
+            <div class="wrap">
+                <div class="sec-head">
+                    <span class="eyebrow">Finding Us</span>
+                    <h2>The Venues</h2>
+                    <svg class="divider" aria-hidden="true" viewBox="0 0 320 26"><use href="#i-flourish" width="320" height="26"/></svg>
+                </div>
+                
+                <div class="location-grid">
+                    <!-- Venue 1: Wedding -->
+                    <div class="venue-card">
+                        <div class="venue-info">
+                            <h3>The Wedding</h3>
+                            <p class="venue-name">Shri Ram Janki Vatika</p>
+                            <p class="venue-address">Naini, Prayagraj, Uttar Pradesh</p>
+                            <a href="https://maps.google.com/?q=Shri+Ram+Janki+Vatika+Naini+Prayagraj" target="_blank" class="btn-map">Get Directions</a>
+                        </div>
+                        <div class="map-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14416.342516029952!2d81.8456884!3d25.3960314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534d3477c6f11%3A0x6b8975c664b3337e!2sNaini%2C%20Prayagraj%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Venue 2: Reception -->
+                    <div class="venue-card">
+                        <div class="venue-info">
+                            <h3>The Reception</h3>
+                            <p class="venue-name">Grand Celebration Hall</p> <!-- Update this name -->
+                            <p class="venue-address">Civil Lines, Prayagraj, Uttar Pradesh</p> <!-- Update this address -->
+                            <a href="#" target="_blank" class="btn-map">Get Directions</a>
+                        </div>
+                        <div class="map-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14416.342516029952!2d81.8456884!3d25.3960314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534d3477c6f11%3A0x6b8975c664b3337e!2sNaini%2C%20Prayagraj%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP SECTION -->
+        <section class="rsvp-sec" id="rsvp">
+            <div class="wrap">
+                <div class="sec-head">
+                    <span class="eyebrow">Kindly Reply</span>
+                    <h2>RSVP</h2>
+                    <svg class="divider" aria-hidden="true" viewBox="0 0 320 26"><use href="#i-flourish" width="320" height="26"/></svg>
+                </div>
+
+                <div class="rsvp-card">
+                    <form id="rsvpForm">
+                        <div class="form-group">
+                            <label for="rsvpName">Full Name</label>
+                            <input type="text" id="rsvpName" required placeholder="Your Name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rsvpEmail">Email Address</label>
+                            <input type="email" id="rsvpEmail" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Will you attend?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="attending" value="Yes" required> Joyfully Accepts</label>
+                                <label><input type="radio" name="attending" value="No"> Regretfully Declines</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="eventsGroup">
+                            <label>Which events will you attend?</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="events" value="silmayan"> Silmayan (Nov 20)</label>
+                                <label><input type="checkbox" name="events" value="wedding"> Wedding (Nov 21)</label>
+                                <label><input type="checkbox" name="events" value="vadhu"> Vadhu Aagman (Nov 22)</label>
+                                <label><input type="checkbox" name="events" value="reception"> Reception (Nov 23)</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rsvpGuests">Number of Guests</label>
+                            <input type="number" id="rsvpGuests" min="1" max="10" value="1" required>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Send RSVP & Add to Calendar</button>
+                    </form>
+
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="rsvpSuccess" class="rsvp-success">
+                        <h3>Thank you!</h3>
+                        <p>Your RSVP has been recorded. We have downloaded your calendar invite.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+                <h2>Shashank & Nitika</h2>
+                <p>We can't wait to celebrate with you.</p>
+                
+                <!-- NEW BUTTON -->
+                <a href="celebrate.html" class="btn-celebrate">Enter the Celebration Hub</a>
+                
+                <div class="footer-divider">...</div>
+                <p class="copyright">© Samriddhi Rohit Yadav 2026</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Link to your external JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
